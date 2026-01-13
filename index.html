@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskIT AstraZeneca - Repositório</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">AskIT <span>AstraZeneca</span></div>
+    <input type="text" id="inputBusca" placeholder="Pesquisar por título de chamado..." onkeyup="filtrar()">
+</nav>
+
+<div class="container">
+    <aside class="sidebar">
+        <h3 id="formLabel">Novo Formulário</h3>
+        <input type="hidden" id="editId"> <input type="text" id="formTitulo" placeholder="Título (ex: Devolução iPhone)">
+        
+        <div id="containerCampos">
+            <div class="campo-item-grupo">
+                <input type="text" class="nome-campo" placeholder="Nome do Campo">
+                <textarea class="mascara-campo" placeholder="Conteúdo da Máscara"></textarea>
+            </div>
+        </div>
+        
+        <button class="btn-secundario" onclick="adicionarCampo()">+ Adicionar Campo</button>
+        <button class="btn-principal" id="btnSalvar" onclick="salvarNoFirebase()">Salvar no Sistema</button>
+        <button class="btn-cancelar" id="btnCancelar" style="display:none;" onclick="cancelarEdicao()">Cancelar Edição</button>
+    </aside>
+
+    <main class="feed" id="listaModelos">
+        </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
